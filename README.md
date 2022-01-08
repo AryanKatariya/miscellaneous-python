@@ -1,4 +1,6 @@
 # health-checks
 Scripts that check the health of my computer
 
+More changes are made.
+
 This repo will be populated with lots of fancy checks.
