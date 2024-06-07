@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import shutil
 import sys
 
@@ -13,13 +14,24 @@ def check_disk_full(disk,min_gb,min_percent):
         return true
     return False
 
+def check_root_full():
+    """Returns True if the root partition is full, False otherwise."""
+    return check_disk_full(disk="/",min_gb=2,min_percent=10)
+
 def main():
-    if check_reboot():
-        print("pending reboot")
-        sys.exit(1)
-    if check_disk_full(disk="/",min_gb=2,min_percent=10):
-        print("Disk full.")
-        sys.exit(1)
+    checks=[
+    (check_reboot, "Pending reboot"),
+    (check_root_full, "Root partition full"),
+    ]
+    everthing_ok = True
+
+    for check, msg in checks:
+        if check():
+            print(msg)
+            everything_ok = False
+
+    if not everthing_ok:
+            sys.exit(1)
 
     print("Everthing Ok.")
     sys.exit(0)
