@@ -1,6 +1,2 @@
-# health-checks
-Scripts that check the health of my computer
-
-More changes are made.
-
-This repo will be populated with lots of fancy checks.
+#Miscellaneous
+This repository contains a collection of miscellaneous Python scripts for various purposes.
