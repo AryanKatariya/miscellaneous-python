@@ -1,0 +1,9 @@
+https://checklists.sindhealth.pk/assets/images/3.png
+https://dhis.sindhealth.pk/img/jquery.datatables/sort_desc_disabled.png
+https://dhis.sindhealth.pk/img/jquery.datatables/sort_asc_disabled.png
+http://checklists.sindhealth.pk/assets/images/map2.png
+http://dhis.sindhealth.pk/img/icon72.png
+http://dhis.sindhealth.pk/img/icon152.png
+http://dhis.sindhealth.pk/img/template/ie8_opacity_dark_20.png
+https://lhwmis.sindhealth.pk/img/field-bg.png
+http://dhis.sindhealth.pk/img/template/ie8_opacity_light_75.png
