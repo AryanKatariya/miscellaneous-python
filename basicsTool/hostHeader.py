@@ -13,10 +13,10 @@ def scan():
 			print(url,":",response.status_code)
 			code = response.status_code
 			
-#			if code == 200:
-#				body = re.findall(r"evil.com",response.text)
-#				if body:
-#					print("vulnerable")
+			if code == 200:
+				body = re.findall(r"evil.com",response.text)
+				if body:
+					print("vulnerable")
 				
 			if code == 301 or code == 302:
 				print(url)
