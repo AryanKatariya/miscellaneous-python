@@ -69,9 +69,9 @@ def screenshot():
 if __name__ == '__main__':
     screenshot()
 
-server = "10.208.34.206"
-username = "root"
-password = "Cdac@123"
+server = ""
+username = ""
+password = ""
 remote_path = "/root/images"
 
 ssh = SSHClient()
